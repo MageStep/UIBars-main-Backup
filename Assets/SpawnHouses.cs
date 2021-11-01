@@ -12,7 +12,9 @@ public class SpawnHouses : MonoBehaviour
     {
         foreach(Transform point in spawnPoints)
         {
-            if(Random.value < .7f)
+            float chanceToSpawnHouse = Random.value;
+            Debug.Log("Chance to spawn house: " + chanceToSpawnHouse);
+            if(chanceToSpawnHouse < .7f)
             {
                 GameObject newHouse = Instantiate(houses[Random.Range(0,houses.Length)]);
                 newHouse.transform.position = point.position;
