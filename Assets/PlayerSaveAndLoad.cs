@@ -30,9 +30,9 @@ public class PlayerSaveAndLoad : MonoBehaviour
     public void Load() {
         // use playerPrefs to load health
         hp.health = PlayerPrefs.GetInt("Health", 100);
-        posX = PlayerPrefs.GetFloat("Player xPos", 0);
-        posY = PlayerPrefs.GetFloat("Player yPos", 0);
-        posZ = PlayerPrefs.GetFloat("Player zPos", 0);
+        posX = PlayerPrefs.GetFloat("Player xPos");
+        posY = PlayerPrefs.GetFloat("Player yPos");
+        posZ = PlayerPrefs.GetFloat("Player zPos");
         this.transform.position = new Vector3(posX, posY, posZ);
     }
 }
