@@ -33,6 +33,16 @@ public class SpawnHouses : MonoBehaviour
             else 
             {
                 //spawn rubble without ai
+                 GameObject newRubble = Instantiate(rubble[Random.Range(0,rubble.Length)]);
+                newRubble.transform.position = point.position;
+                newRubble.transform.rotation = point.rotation;
+                //spawn in 2-5 AI
+                int numberOfAI = Random.Range(2,6);
+                for(int i = 0; i < numberOfAI; i += 1)
+                {
+                    GameObject ai = Instantiate(aiPrefab, point.position, point.rotation);
+                    ai.GetComponent<MoveTo>().goal = player;                   
+                }
                 
             }
             
